@@ -14,8 +14,6 @@ public class AddressBook {
         if (buddy != null) {
             buddyList.add(buddy);
         }
-
-
     }
     public BuddyInfo removeBuddy(int index) {
         if (index >= 0 && index < buddyList.size()) {
@@ -24,6 +22,12 @@ public class AddressBook {
         return null;
     }
 
+    public void printBuddies() {
+        // new method for the testBranch
+        for (BuddyInfo buddy : buddyList) {
+            System.out.println(buddy.getName());
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Address Book");
 

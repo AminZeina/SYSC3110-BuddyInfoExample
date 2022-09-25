@@ -9,11 +9,17 @@ public class AddressBook {
     }
 
     public void addBuddy(BuddyInfo buddy) {
-        buddyList.add(buddy);
+        if (buddy != null) {
+            buddyList.add(buddy);
+        }
+
 
     }
-    public void removeBuddy(BuddyInfo buddy) {
-        buddyList.remove(buddy);
+    public BuddyInfo removeBuddy(int index) {
+        if (index >= 0 && index < buddyList.size()) {
+            return buddyList.remove(index);
+        }
+        return null;
     }
 
     public static void main(String[] args) {
@@ -23,7 +29,7 @@ public class AddressBook {
 
         BuddyInfo buddy1 = new BuddyInfo();
         addressBook.addBuddy(buddy1);
-        addressBook.removeBuddy(buddy1);
+        addressBook.removeBuddy(0);
     }
 
 }
